@@ -47,16 +47,26 @@ public class Baraja {
     }
     // barajar(): cambia de posición todas las cartas aleatoriamente.
 
-    public void barajar() {
-        Set<Integer> numeros = new HashSet<>();
+//    public void barajar() {
+//        Set<Integer> numeros = new HashSet<>();
+//        Random random = new Random();
+//        while (numeros.size() < baraja.size()) {
+//            int numeroAleatorio = random.nextInt(40) + 1;
+//            numeros.add(numeroAleatorio);
+//        }
+//        ArrayList<Integer> numerosAleatorios = new ArrayList<>(numeros);
+//        for (int i = 0; i < baraja.size(); i++) {
+//            baraja.set(i, baraja.get(numerosAleatorios.get(i) - 1));
+//        }
+//    }
+        public void barajar() {
         Random random = new Random();
-        while (numeros.size() < baraja.size()) {
-            int numeroAleatorio = random.nextInt(40) + 1;
-            numeros.add(numeroAleatorio);
-        }
-        ArrayList<Integer> numerosAleatorios = new ArrayList<>(numeros);
-        for (int i = 0; i < baraja.size(); i++) {
-            baraja.set(i, baraja.get(numerosAleatorios.get(i) - 1));
+        int n = baraja.size();
+        for (int i = 0; i < n; i++) {
+            int randomIndex = i + random.nextInt(n - i);
+            Carta temp = baraja.get(i);
+            baraja.set(i, baraja.get(randomIndex));
+            baraja.set(randomIndex, temp);
         }
     }
     // siguienteCarta(): devuelve la siguiente carta que está en la baraja,
@@ -106,7 +116,7 @@ pero debemos indicárselo al usuario.
         
         if(cartasADar.size()>0){
             for(Carta i:cartasADar){
-                System.out.println("las casrtas del monton son: "+ i.toString());
+                System.out.println("las cartas del monton son: "+ i.toString());
             }
         }else{
                     System.out.println("no salio n inguna carta");

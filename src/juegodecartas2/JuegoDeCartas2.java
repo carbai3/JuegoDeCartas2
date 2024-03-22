@@ -16,13 +16,24 @@ public class JuegoDeCartas2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         Baraja baraja = new Baraja();
-    baraja.crearBaraja();
-    baraja.barajar();
-    baraja.darCartas(8);
-    baraja.cartasMonton();
+        Baraja baraja = new Baraja();
+        System.out.println("Creamos Baraja y mostramos la baraja");
+        System.out.println("------------------------------------");
+        System.out.println("BARAJA CREADA");
+        System.out.println("------------------------------------");
+        baraja.crearBaraja();
+        baraja.mostrarBaraja();
+        System.out.println("------------------------------------");
+        System.out.println("BARAJAMOS");
+        baraja.barajar();
+        System.out.println("------------------------------------");
+        System.out.println("Mostramos Baraja mezclada");
+        baraja.mostrarBaraja();
+        System.out.println("------------------------------------");
+        System.out.println("Damos 8 cartas");
+        baraja.darCartas(8);
+        System.out.println("Mostramos las cartas que dimos");
+        System.out.println("------------------------------------");
+        baraja.cartasMonton();
     }
 }
-    
-    
-
