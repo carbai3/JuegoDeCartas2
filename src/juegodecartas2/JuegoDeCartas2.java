@@ -16,6 +16,13 @@ public class JuegoDeCartas2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+         Baraja baraja = new Baraja();
+    baraja.crearBaraja();
+    baraja.barajar();
+    baraja.darCartas(8);
+    baraja.cartasMonton();
     }
-    
 }
+    
+    
+
