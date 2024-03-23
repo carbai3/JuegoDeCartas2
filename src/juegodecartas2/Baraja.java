@@ -47,26 +47,23 @@ public class Baraja {
     }
     // barajar(): cambia de posición todas las cartas aleatoriamente.
 
-//    public void barajar() {
-//        Set<Integer> numeros = new HashSet<>();
-//        Random random = new Random();
-//        while (numeros.size() < baraja.size()) {
-//            int numeroAleatorio = random.nextInt(40) + 1;
-//            numeros.add(numeroAleatorio);
-//        }
-//        ArrayList<Integer> numerosAleatorios = new ArrayList<>(numeros);
-//        for (int i = 0; i < baraja.size(); i++) {
-//            baraja.set(i, baraja.get(numerosAleatorios.get(i) - 1));
-//        }
-//    }
         public void barajar() {
         Random random = new Random();
         int n = baraja.size();
+        /* Se itera sobre la lista de cartas desde el principio 
+        hasta el final. En cada iteración, se selecciona un 
+        índice aleatorio dentro del rango restante de cartas no barajadas.*/
         for (int i = 0; i < n; i++) {
             int randomIndex = i + random.nextInt(n - i);
-            Carta temp = baraja.get(i);
-            baraja.set(i, baraja.get(randomIndex));
-            baraja.set(randomIndex, temp);
+            /* Se intercambian las cartas en las posiciones i y randomIndex 
+            de la lista. Esto se realiza para simular el efecto de barajar las cartas.*/
+            Carta temp = baraja.get(i);// se obtiene la carta en la posicion i
+            baraja.set(i, baraja.get(randomIndex));// se remplaza la carta en la posicion i, por la random
+            baraja.set(randomIndex, temp); /*en esta línea se coloca la carta original 
+            que se guardó en la variable temporal temp en la posición aleatoria 
+            randomIndex. De esta forma, se intercambian 
+            las cartas en las posiciones i y randomIndex.*/
+          
         }
     }
     // siguienteCarta(): devuelve la siguiente carta que está en la baraja,
